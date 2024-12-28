@@ -77,18 +77,23 @@
 
     <script>
 
-        document.querySelector('form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
+document.querySelector('form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
 
-            if (username === 'helena' && password === 'helena1234') {
-                window.location.href = 'main.html';
-            } else {
-                document.getElementById('error-message').textContent = 'Usuário ou senha inválidos.';
-            }
-        });
+    if (username === 'helena' && password === 'helena1234') {
+
+        localStorage.setItem('isLoggedIn', 'true');
+        
+
+        window.location.href = 'main.html';
+    } else {
+        document.getElementById('error-message').textContent = 'Usuário ou senha inválidos.';
+    }
+});
+
     </script>
     
 </body>
